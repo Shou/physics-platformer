@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://coin/Coin.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://background/ParallaxBg.tscn" type="PackedScene" id=8]
 [ext_resource path="res://audio/music.ogg" type="AudioStream" id=9]
 [ext_resource path="res://player/Player2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://platform/MovingPathPlatform.tscn" type="PackedScene" id=11]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
@@ -205,6 +206,8 @@ cycle = 10.0
 [node name="Seesaw" parent="Props" instance=ExtResource( 4 )]
 position = Vector2( 1201.4, 424.76 )
 
+[node name="MovingPathPlatform" parent="Props" instance=ExtResource( 11 )]
+
 [node name="OneWayPlatform" parent="Props" instance=ExtResource( 5 )]
 position = Vector2( 463.849, 560.405 )
 
@@ -275,5 +278,5 @@ autowrap = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
-volume_db = -15.0
+volume_db = -40.0
 autoplay = true

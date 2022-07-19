@@ -11,7 +11,7 @@ var jumpDuration: float = 0.3
 
 
 func _ready() -> void:
-	pass # Replace with function body.
+	
 
 func _integrate_forces(s: Physics2DDirectBodyState) -> void:
 	var delta: float = s.get_step()
