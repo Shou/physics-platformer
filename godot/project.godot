@@ -33,13 +33,19 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://player/player.gd"
+}, {
+"base": "RigidBody2D",
+"class": "Player2",
+"language": "GDScript",
+"path": "res://player/Player2.gd"
 } ]
 _global_script_class_icons={
 "Bullet": "",
 "Coin": "",
 "Enemy": "",
 "MovingPlatform": "",
-"Player": ""
+"Player": "",
+"Player2": ""
 }
 
 [application]

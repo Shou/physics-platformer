@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+class_name Player2
+
 
 onready var FloorCast: RayCast2D = $RayCast2D
 onready var AnimSprite: AnimatedSprite = $AnimatedSprite
@@ -11,7 +13,7 @@ var jumpDuration: float = 0.3
 
 
 func _ready() -> void:
-	
+	pass
 
 func _integrate_forces(s: Physics2DDirectBodyState) -> void:
 	var delta: float = s.get_step()
@@ -35,11 +37,13 @@ func _integrate_forces(s: Physics2DDirectBodyState) -> void:
 	
 	if Input.get_action_strength("jump") and jumpTime < jumpDuration:
 		var unitProgress: float = jumpTime / jumpDuration
-		movement.y = -(1.0 - pow(unitProgress, 2.0)) * 360
+		movement.y = -(1.0 - pow(unitProgress, 2.0)) * 512
 		newAnim = "Jump"
 	elif not FloorCast.is_colliding():
-		movement.y = log(fallTime + 1) * 128
+		movement.y = log(fallTime * 2 + 1) * 128
 		newAnim = "Fall"
+	else:
+		movement.y = 128
 	
 	AnimSprite.play(newAnim)
 	
